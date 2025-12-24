@@ -1,0 +1,111 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Orchestrator (8000)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.orchestrator.orchestrator_app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Member Data (8001)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.applications.member_data:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8001",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Prediction (8002)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.applications.prediction:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8002",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Offer Engine (8003)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.applications.offer_engine:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8003",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Stream CSV",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/stream_member_data.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run All Services",
+      "configurations": [
+        "Member Data (8001)",
+        "Prediction (8002)",
+        "Offer Engine (8003)",
+        "Orchestrator (8000)"
+      ],
+      "stopAll": true
+    }
+  ]
+}
