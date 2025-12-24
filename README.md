@@ -169,6 +169,7 @@ The project can be validated using a **local Jenkins pipeline** running on Windo
 
 ```bash
 docker run -d --name jenkins-local -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+```
 
 ---
 
