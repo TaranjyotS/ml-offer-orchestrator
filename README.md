@@ -1,6 +1,6 @@
 A production-style **FastAPI-based orchestration service** demonstrating dependency injection, retries, concurrency control, observability, and distributed system patterns, calls external **ML prediction** services, and assigns an offer via an offer engine.
 
-The services under **src/applications/** are intentionally treated as external systems (per the assignment) and are accessed over HTTP.
+The services under **src/applications/** are intentionally treated as external systems and are accessed over HTTP.
 ---
 
 ## What the system does
@@ -174,7 +174,7 @@ docker run -d --name jenkins-local -p 8080:8080 -p 50000:50000 jenkins/jenkins:l
 
 ## Project layout
 
-```
+```text
 .
 ├─ src/
 │  ├─ orchestrator/          # orchestrator API, DI, services, middleware
